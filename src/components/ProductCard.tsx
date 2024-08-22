@@ -1,10 +1,5 @@
-import img from "../images/img1.png";
-
 function ProductCard({ ...props }) {
   const { title, image, price, description, color } = props;
-
-  // console.log(title.length);
-
   return (
     <div
       className={`w-[170px] h-[224px] rounded-2xl shadow-black shadow-3xl cursor-pointer hover:shadow-4xl transition-all duration-300 pt-2`}
