@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/store";
 import ProductCard from "../components/ProductCard";
 import { getWomensProducts } from "../feature/products/productSlice";
+import { ProductType } from "../feature/products/types/ProductType";
 
 function WomensProducts() {
   const dispatch = useAppDispatch();
@@ -10,7 +11,7 @@ function WomensProducts() {
     dispatch(getWomensProducts());
   }, []);
 
-  const productState = useAppSelector((state) => state.product.womensProducts);
+  const productState: ProductType[] = useAppSelector((state) => state.product.womensProducts);
 
   return (
     <section className="container mx-auto mt-2 px-60">

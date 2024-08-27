@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../app/store";
 import ProductCard from "../components/ProductCard";
 import { getMensProducts } from "../feature/products/productSlice";
+import { ProductType } from "../feature/products/types/ProductType";
 import img from "../images/img1.png";
 import { useEffect } from "react";
 function MensProducts() {
@@ -10,7 +11,7 @@ function MensProducts() {
     dispatch(getMensProducts());
   }, []);
 
-  const productState = useAppSelector((state) => state.product.mensProducts);
+  const productState: ProductType[] = useAppSelector((state) => state.product.mensProducts);
 
   return (
     <section className="container mx-auto mt-2 px-60">

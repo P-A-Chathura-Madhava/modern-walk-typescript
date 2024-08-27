@@ -1,4 +1,3 @@
 export type CategoryProp = {
-    clothType: string | undefined;
-    color: string | undefined;
+    title: string | undefined;
 }
