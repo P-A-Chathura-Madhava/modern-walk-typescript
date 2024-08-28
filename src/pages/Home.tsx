@@ -4,6 +4,7 @@ import CategoriesCard from "../components/CategoriesCard";
 import { useAppDispatch, useAppSelector } from "../app/store";
 import { useEffect } from "react";
 import { getMixedProducts } from "../feature/products/productSlice";
+import { ProductType } from "../feature/products/types/ProductType";
 
 function Home() {
   const dispatch = useAppDispatch();
@@ -12,7 +13,9 @@ function Home() {
     dispatch(getMixedProducts());
   }, []);
 
-  const productState = useAppSelector((state) => state.product.products);
+  const productState: ProductType[] = useAppSelector(
+    (state) => state.product.products
+  );
 
   return (
     <section className="container mx-auto mt-2 px-60">
