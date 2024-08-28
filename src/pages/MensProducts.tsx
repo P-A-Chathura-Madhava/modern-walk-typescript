@@ -11,7 +11,9 @@ function MensProducts() {
     dispatch(getMensProducts());
   }, []);
 
-  const productState: ProductType[] = useAppSelector((state) => state.product.mensProducts);
+  const productState: ProductType[] = useAppSelector(
+    (state) => state.product.mensProducts
+  );
 
   return (
     <section className="container mx-auto mt-2 px-60">

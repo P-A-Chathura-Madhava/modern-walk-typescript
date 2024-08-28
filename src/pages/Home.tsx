@@ -13,7 +13,9 @@ function Home() {
     dispatch(getMixedProducts());
   }, []);
 
-  const productState: ProductType[] = useAppSelector((state) => state.product.products);
+  const productState: ProductType[] = useAppSelector(
+    (state) => state.product.products
+  );
 
   return (
     <section className="container mx-auto mt-2 px-60">

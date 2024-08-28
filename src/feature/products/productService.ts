@@ -6,7 +6,7 @@ const URL: string = "https://fakestoreapi.com/products/category/";
 const getMensProducts = async (): Promise<ProductType[]> => {
   const response: AxiosResponse<ProductType[]> = await axios.get<ProductType[]>(
     `${URL}men's%20clothing`
-  );  
+  );
   return response.data;
 };
 

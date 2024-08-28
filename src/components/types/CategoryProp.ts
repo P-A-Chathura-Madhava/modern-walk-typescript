@@ -1,3 +1,3 @@
 export type CategoryProp = {
-    title: string | undefined;
-}
+  title: string | undefined;
+};
