@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import MensProducts from "./pages/MensProducts";
-import WomensProducts from "./pages/WomensProducts";
-import Header from "./components/Header";
+import Home from "./ui-core/templates/pages/Home";
+import MensProducts from "./ui-core/templates/pages/MensProducts";
+import WomensProducts from "./ui-core/templates/pages/WomensProducts";
+import Header from "./ui-core/components/molecules/Header";
 
 function App() {
   return (
