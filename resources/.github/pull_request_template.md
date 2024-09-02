@@ -1,15 +1,14 @@
-# <- Atomic Component Structure ->
+# <- Clerk Authentication ->
 
-- Applied Atomic component structure for better arrangement in the code base
+- Applied Authentication with Clerk Authentication.
 
 ## Metadata
 
 | Query                                        | Value                                                                                      |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Destination Branch                           | `refactor/atomic-component-structure`                                                                            |                                                                                 |
-| Change type                                  | `Architectural Change` |                                                       
+| Destination Branch                           | `feature/authentication`                                                                            |                                                                                 |
+| Change type                                  | `New Feature` |                                                       
 
 ### Files with major changes / what is worth paying more attention to?
-- Home.tsx
-- MensProducts.tsx
-- WomensProducts.tsx
+- index.tsx
+- App.tsx
