@@ -1,37 +1,28 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import productService from "./productService";
-import { ProductModal } from "../../modals/ProductModal";
+import { ProductType } from "./types/ProductType";
+import { ProductState } from "./types/ProductState";
 
 export const getMensProducts = createAsyncThunk(
   "product/get-mens-products",
-  async (thunkAPI) => {
+  async (thunkAPI): Promise<ProductType[]> => {
     return await productService.getMensProducts();
   }
 );
 
 export const getWomensProducts = createAsyncThunk(
   "product/get-womens-products",
-  async (thunkAPI) => {
+  async (thunkAPI): Promise<ProductType[]> => {
     return await productService.getWomensProducts();
   }
 );
 
 export const getMixedProducts = createAsyncThunk(
   "product/get-mixed-products",
-  async (thunkAPI) => {
+  async (thunkAPI): Promise<ProductType[]> => {
     return await productService.getMixedProducts();
   }
 );
-
-export interface ProductState {
-  products: ProductModal[];
-  mensProducts: ProductModal[];
-  womensProducts: ProductModal[];
-  isError: boolean;
-  isLoading: boolean;
-  isSuccess: boolean;
-  message: any;
-}
 
 const initialState: ProductState = {
   products: [],
