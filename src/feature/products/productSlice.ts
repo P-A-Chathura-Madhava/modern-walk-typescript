@@ -24,7 +24,19 @@ export const getMixedProducts = createAsyncThunk(
   }
 );
 
+export const getSelectedProductFromIds = createAsyncThunk(
+  "product/get-product-id",
+  async (itemIds: any[], thunkAPI): Promise<ProductType[]> => {
+    return await productService.getSelectedProduct(itemIds)
+    // const response = await productService.getProductByItemId(id);
+    // console.log(response);
+    
+    // return response;
+  }
+);
+
 const initialState: ProductState = {
+  product: undefined,
   products: [],
   mensProducts: [],
   womensProducts: [],
@@ -79,7 +91,16 @@ export const productSlice = createSlice({
         state.isSuccess = true;
         state.products = action.payload;
       })
-      .addCase(getMixedProducts.rejected, (state, action) => {
+      .addCase(getSelectedProductFromIds.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSelectedProductFromIds.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        state.products = action.payload;
+      })
+      .addCase(getSelectedProductFromIds.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;

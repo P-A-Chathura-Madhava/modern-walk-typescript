@@ -11,6 +11,7 @@ function Products({ ...props }) {
           return (
             <ProductCard
               key={index}
+              id={item?.id}
               title={item?.title}
               image={item?.image}
               price={item?.price}

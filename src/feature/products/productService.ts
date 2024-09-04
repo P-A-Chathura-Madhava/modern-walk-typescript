@@ -2,11 +2,12 @@ import axios, { AxiosResponse } from "axios";
 import { ProductType } from "./types/ProductType";
 
 const URL: string = "https://fakestoreapi.com/products/category/";
+const URL2: string = "https://fakestoreapi.com/products/";
 
 const getMensProducts = async (): Promise<ProductType[]> => {
   const response: AxiosResponse<ProductType[]> = await axios.get<ProductType[]>(
     `${URL}men's%20clothing`
-  );
+  );  
   return response.data;
 };
 
@@ -30,10 +31,24 @@ const getMixedProducts = async (): Promise<ProductType[]> => {
   return data;
 };
 
+const getSelectedProduct = async (itemIdArray: any[]): Promise<ProductType[]> => {
+  let newItemArray: any[] = [];
+
+  for (let i = 0; i < itemIdArray.length; i++) {
+      let response: AxiosResponse<ProductType> = await axios.get<ProductType>(
+    `${URL2}${itemIdArray[i]}`
+  ); 
+    newItemArray.push(response.data);    
+  }
+  // console.log(newItemArray);  
+  return newItemArray;
+};
+
 const productService = {
   getMensProducts,
   getWomensProducts,
   getMixedProducts,
+  getSelectedProduct
 };
 
 export default productService;

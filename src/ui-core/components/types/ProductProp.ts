@@ -1,4 +1,5 @@
 export type ProductProp = {
+  id: number;
   category: string | undefined;
   description: string | undefined;
   image: string | undefined;

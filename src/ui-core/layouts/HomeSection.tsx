@@ -4,6 +4,7 @@ import CategoriesRaw from "../components/molecules/CategoriesRaw";
 
 function HomeSection({ ...props }) {
   const { productState } = props;
+  
 
   return (
     <section className="container mx-auto mt-2 px-60">

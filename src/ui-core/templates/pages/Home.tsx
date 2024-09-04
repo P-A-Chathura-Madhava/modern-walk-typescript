@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const {isSignedIn} = useUser();
   const navigate = useNavigate();
-  console.log(isSignedIn);
 
   if (!isSignedIn) {
     navigate("/signin");
@@ -25,6 +24,7 @@ function Home() {
   const productState: ProductType[] = useAppSelector(
     (state) => state.product.products
   );
+  
 
   return <HomeSection {...{ productState }} />;
 }

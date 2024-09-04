@@ -3,6 +3,7 @@ import ProductCard from "../atoms/ProductCard";
 
 function ProductRaw({ ...props }) {
   const { productState } = props;
+  
 
   return (
     <div className="flex justify-between align-middle">
@@ -15,6 +16,7 @@ function ProductRaw({ ...props }) {
           return (
             <ProductCard
               key={index}
+              id={item?.id}
               title={item?.title}
               image={item?.image}
               price={item?.price}
