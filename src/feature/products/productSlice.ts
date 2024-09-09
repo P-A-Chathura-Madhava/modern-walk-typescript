@@ -1,39 +1,42 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import productService from "./productService";
-import { ProductModal } from "../../modals/ProductModal";
+import { ProductType } from "./types/ProductType";
+import { ProductState } from "./types/ProductState";
 
 export const getMensProducts = createAsyncThunk(
   "product/get-mens-products",
-  async (thunkAPI) => {
+  async (thunkAPI): Promise<ProductType[]> => {
     return await productService.getMensProducts();
   }
 );
 
 export const getWomensProducts = createAsyncThunk(
   "product/get-womens-products",
-  async (thunkAPI) => {
+  async (thunkAPI): Promise<ProductType[]> => {
     return await productService.getWomensProducts();
   }
 );
 
 export const getMixedProducts = createAsyncThunk(
   "product/get-mixed-products",
-  async (thunkAPI) => {
+  async (thunkAPI): Promise<ProductType[]> => {
     return await productService.getMixedProducts();
   }
 );
 
-export interface ProductState {
-  products: ProductModal[];
-  mensProducts: ProductModal[];
-  womensProducts: ProductModal[];
-  isError: boolean;
-  isLoading: boolean;
-  isSuccess: boolean;
-  message: any;
-}
+export const getSelectedProductFromIds = createAsyncThunk(
+  "product/get-product-id",
+  async (itemIds: any[], thunkAPI): Promise<ProductType[]> => {
+    return await productService.getSelectedProduct(itemIds)
+    // const response = await productService.getProductByItemId(id);
+    // console.log(response);
+    
+    // return response;
+  }
+);
 
 const initialState: ProductState = {
+  product: undefined,
   products: [],
   mensProducts: [],
   womensProducts: [],
@@ -88,7 +91,16 @@ export const productSlice = createSlice({
         state.isSuccess = true;
         state.products = action.payload;
       })
-      .addCase(getMixedProducts.rejected, (state, action) => {
+      .addCase(getSelectedProductFromIds.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSelectedProductFromIds.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        state.products = action.payload;
+      })
+      .addCase(getSelectedProductFromIds.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
