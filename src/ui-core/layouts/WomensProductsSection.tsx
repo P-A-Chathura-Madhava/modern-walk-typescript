@@ -1,4 +1,4 @@
-import SubHeading from "../components/atoms/SubHeading";
+import SubHeading from "../components/atoms/page/SubHeading";
 import Products from "../components/molecules/Products";
 
 function WomensProductsSection({ ...props }) {

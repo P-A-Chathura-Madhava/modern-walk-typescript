@@ -1,15 +1,14 @@
-import { ProductProp } from "../types/ProductProp";
-import ProductCard from "./product-card/ProductCard";
+import CartProductCard from "./CartProductCard";
+import { ProductProp } from "../../types/ProductProp";
 
-function Products({ ...props }) {
+function CartProducts({ ...props }) {
   const { productState } = props;
-
   return (
     <div className="grid grid-cols-4 gap-10 mt-4 gap-y-8">
       {productState &&
         productState?.map((item: ProductProp, index: number) => {
           return (
-            <ProductCard
+            <CartProductCard
               key={index}
               id={item?.id}
               title={item?.title}
@@ -24,4 +23,4 @@ function Products({ ...props }) {
   );
 }
 
-export default Products;
+export default CartProducts;

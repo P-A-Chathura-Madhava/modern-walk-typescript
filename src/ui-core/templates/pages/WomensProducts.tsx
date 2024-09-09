@@ -3,8 +3,17 @@ import { useAppDispatch, useAppSelector } from "../../../app/store";
 import { getWomensProducts } from "../../../feature/products/productSlice";
 import { ProductType } from "../../../feature/products/types/ProductType";
 import WomensProductsSection from "../../layouts/WomensProductsSection";
+import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 function WomensProducts() {
+  const { isSignedIn } = useUser();
+  const navigate = useNavigate();
+
+  if (!isSignedIn) {
+    navigate("/signin");
+  }
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {

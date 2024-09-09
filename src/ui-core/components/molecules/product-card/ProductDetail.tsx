@@ -1,5 +1,5 @@
-import ProductCardDescription from "../atoms/ProductCardDescription";
-import ProductCardPrice from "../atoms/ProductCardPrice";
+import ProductCardDescription from "../../atoms/product-card/ProductCardDescription";
+import ProductCardPrice from "../../atoms/product-card/ProductCardPrice";
 
 function ProductDetail({ ...props }) {
   const { price, description, color } = props;

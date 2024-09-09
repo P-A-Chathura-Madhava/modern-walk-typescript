@@ -1,4 +1,4 @@
-import ClothType from "../atoms/ClothType";
+import ClothType from "../../atoms/category/ClothType";
 
 function CategoriesCard({ ...props }) {
   const { clothType, color } = props;

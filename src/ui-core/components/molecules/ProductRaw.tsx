@@ -1,9 +1,8 @@
 import { ProductProp } from "../types/ProductProp";
-import ProductCard from "../atoms/ProductCard";
+import ProductCard from "./product-card/ProductCard";
 
 function ProductRaw({ ...props }) {
   const { productState } = props;
-  
 
   return (
     <div className="flex justify-between align-middle">
