@@ -9,6 +9,9 @@ import {
 } from "../../../feature/cart/cartSlice";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import CartFooter from "../../layouts/CartFooter";
+import { Link } from "react-router-dom";
+import { IoArrowBack } from "react-icons/io5";
 
 function CartDetails() {
   const dispatch = useAppDispatch();
@@ -18,9 +21,6 @@ function CartDetails() {
     (state: any) => state?.cart?.cartTotalAmount
   );
 
-  const clearCartItems = () => {
-    dispatch(clearCart());
-  };
 
   const removeItemFromCartHandler = (product: any) => {
     dispatch(removeFromCart(product));
@@ -39,13 +39,14 @@ function CartDetails() {
   }, [productState]);
 
   return (
+    <div>
     <div className="container mx-auto mt-2 px-60">
-      <div className="flex gap-2">
-        <div className="w-[80%]">
+      <div className="flex justify-between">
+        <div className="w-[72%]">
           <h2 className="text-xl font-bold border border-b-black border-r-transparent border-l-transparent border-t-transparent">
             Cart
           </h2>
-          <div className="overflow-scroll h-72">
+          <div className="h-64 overflow-scroll overflow-x-hidden scroll-auto">
             <div className="flex">
               <h4 className="w-[60%] font-bold text-md">Product Details</h4>
               <h4 className="w-[20%] font-bold text-md">Quantity</h4>
@@ -119,14 +120,7 @@ function CartDetails() {
             })}
           </div>
 
-          <div>
-            <button
-              className="p-2 px-8 font-bold text-white transition-all duration-300 bg-red-800 rounded-md text-md hover:text-black hover:bg-red-400"
-              onClick={clearCartItems}
-            >
-              Clear Cart
-            </button>
-          </div>
+
         </div>
         <div className="w-[20%]">
           <h4 className="text-xl font-bold border border-b-black border-r-transparent border-l-transparent border-t-transparent">
@@ -142,11 +136,11 @@ function CartDetails() {
               {cartTotalAmount.toFixed(2)}
             </h4>
           </div>
-          <button className="w-full p-2 text-sm font-bold text-white transition-all duration-300 bg-blue-900 rounded-md hover:bg-blue-400 hover:text-black">
-            CHECKOUT
-          </button>
         </div>
       </div>
+      <Link to={"/"} className="flex items-center gap-2 font-bold text-blue-700 underline"><IoArrowBack /> back to home</ Link>
+    </div>
+      <CartFooter />
     </div>
   );
 }

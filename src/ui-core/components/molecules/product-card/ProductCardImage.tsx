@@ -6,10 +6,15 @@ import { addToCart } from "../../../../feature/cart/cartSlice";
 import { useUser } from "@clerk/clerk-react";
 import CartProductCardHeading from "../../atoms/cart/CartProductCardHeading";
 import CartProductCardImage from "../../atoms/cart/CartProductCardImage";
+import { useNavigate } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
 
-function ProductCardImage({ ...props }) {
+function ProductCardImage({ ...props }) {  
+  const navigate = useNavigate();
   const { isSignedIn } = useUser();
   const { id, title, image, price, description, color } = props;
+
+  
   const product: any = {
     id,
     title,
@@ -47,12 +52,21 @@ function ProductCardImage({ ...props }) {
               <FaRegBookmark />
             </div>
           )}
-          <div
-            className="flex items-center justify-center w-8 h-8 text-xl rounded-full hover:bg-slate-400"
-            onClick={addToCartHandler}
-          >
-            <FaShoppingCart />
-          </div>
+          {isSignedIn === false ? (
+                      <div
+                      className="flex items-center justify-center w-8 h-8 text-xl rounded-full hover:bg-slate-400"
+                      onClick={()=>navigate("/signin")}
+                    >
+                      <FiShoppingCart />
+                    </div>
+          ) :           <div
+          className="flex items-center justify-center w-8 h-8 text-xl rounded-full hover:bg-slate-400"
+          onClick={addToCartHandler}
+        >
+          <FaShoppingCart />
+        </div>
+        }
+
         </div>
       </div>
     </div>

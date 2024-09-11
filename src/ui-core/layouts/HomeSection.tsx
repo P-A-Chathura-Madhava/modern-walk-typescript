@@ -3,7 +3,7 @@ import ProductRaw from "../components/molecules/ProductRaw";
 import CategoriesRaw from "../components/molecules/cartegories/CategoriesRaw";
 
 function HomeSection({ ...props }) {
-  const { productState } = props;
+  const { productState } = props;  
 
   return (
     <section className="container mx-auto mt-2 px-60">
