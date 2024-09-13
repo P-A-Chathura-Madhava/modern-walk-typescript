@@ -1,28 +1,18 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/store";
-import { getWomensProducts } from "../../../feature/products/productSlice";
-import { ProductType } from "../../../feature/products/types/ProductType";
 import WomensProductsSection from "../../layouts/WomensProductsSection";
 import { useUser } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
+import useGetWomensProducts from "../../../hooks/products/useGetWomensProducts";
 
 function WomensProducts() {
   const { isSignedIn } = useUser();
   const navigate = useNavigate();
 
+  const products = useGetWomensProducts();
+  const productState = products.data;
+
   if (!isSignedIn) {
     navigate("/signin");
   }
-
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(getWomensProducts());
-  }, []);
-
-  const productState: ProductType[] = useAppSelector(
-    (state: any) => state.product.womensProducts
-  );
 
   return <WomensProductsSection {...{ productState }} />;
 }

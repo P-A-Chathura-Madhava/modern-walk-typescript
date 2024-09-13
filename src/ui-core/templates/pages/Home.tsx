@@ -1,19 +1,9 @@
-import { useAppDispatch, useAppSelector } from "../../../app/store";
-import { useEffect } from "react";
-import { getMixedProducts } from "../../../feature/products/productSlice";
-import { ProductType } from "../../../feature/products/types/ProductType";
 import HomeSection from "../../layouts/HomeSection";
+import useGetMixedProducts from "../../../hooks/products/useGetMixedProducts";
 
 function Home() {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(getMixedProducts());
-  }, []);
-
-  const productState: ProductType[] = useAppSelector(
-    (state) => state.product.products
-  );
+  const products = useGetMixedProducts();
+  const productState = products.data;
 
   return <HomeSection {...{ productState }} />;
 }
