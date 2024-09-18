@@ -32,8 +32,8 @@ No
 
 ## Checklist:
 
-- [ ] My code follows the style guidelines of this project.
-- [ ] I have performed a self-review of my code.
+- [x] My code follows the style guidelines of this project.
+- [x] I have performed a self-review of my code.
 - [ ] I unit tested new methods.
 - [ ] I have commented my code, particularly in hard-to-understand areas.
 - [ ] My changes require changes in documentation and I have made the corresponding changes.
