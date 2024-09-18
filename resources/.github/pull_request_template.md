@@ -1,38 +1,34 @@
-# <- Tanstack Implementation ->
+# <- Add Custom Styles ->
 
-- Add tanstack query
+- Add colors to tailwind config file.
+- Add sizing to tailwind config file.
 
 ## Metadata
 
 | Query                                        | Value                                                                                      |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Destination Branch                           | `feature/tanstack-query`                                                                            |
-| Design spec                                  |                                                                                  |
-| Change type                                  | `New Feature`  |
-| Should reviewers manually test your changes? | `No`                                                                        |
+| Destination Branch                           | `style/customize-tailwind`                                                                            |
+| Design spec                                  | https://www.figma.com/design/RClGZzVSSOGX9edBNqjd87/FE-Internship---Design-System?node-id=0-1&node-type=canvas&t=71fxXDPrt8CLjABr-0                                                                                 |
+| Change type                                  | `Style` <Pick one or more> |
+| Should reviewers manually test your changes? | `Yes`                                                                        |
 
-## Visual Aid
+<!-- ## Visual Aid
+
+<- Upload a screenshot or demo clip if necessary -> -->
 
 ## Additional Information <Delete unnecessary points>
 
 ### How Has This Been Tested?
 
-I tested this manually
+I tested this manually.
 
 ### Does similar functionality already exist in the codebase? If so, why isn’t this functionality reused?
 
-Yes, Redux is exists in this codebase. I implement this because it's good for fast fetching and sending API requests.
+No
 
 ### Files with major changes / what is worth paying more attention to?
 
-- index.tsx
-- Home.tsx
-- MensProducts.tsx
-- WormensProducts-tsx
-- useGetMensProducts.ts
-- useGetWomensProducts.ts
-- useGetMixedProducts.ts
-- store.ts
+- tailwind.config.js
 
 ## Checklist:
 
