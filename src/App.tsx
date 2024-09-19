@@ -9,6 +9,7 @@ import Watchlist from "./ui-core/templates/pages/Watchlist";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CartDetails from "./ui-core/templates/pages/CartDetails";
+import ComponentsPage from "./ui-core/templates/pages/ComponentsPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/womens-products" element={<WomensProducts />} />
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/cart" element={<CartDetails />} />
+          <Route path="/components" element={<ComponentsPage />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer

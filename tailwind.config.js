@@ -13,7 +13,7 @@ module.exports = {
           'inverse-hover': '#F7CDA6',
           'inverse-hover-click': '#EBB888'
         },
-        'main': '#001948',
+        'main': 'rgb(204, 209, 218)',
         'borderColor': {
           'active': '#7C89A1',
           'inactive': '#C6CBD5'
@@ -44,22 +44,50 @@ module.exports = {
       height: {
         'icon-h-normal': 32,
         'icon-h-big': 48,
-        'btn-normal': 48, 
+        'btn-normal': 48,
+        'table-sort': 28,
+        'input-field': 48
       },
       width: {
         'icon-w-normal': 32,
         'icon-w-big': 48,
-        'btn-normal': 119
+        'btn-normal': 119,
+        'table-sort': 18,
+        'input-field': 416
       },
       borderRadius: {
         'icon': 9,
-        'btn': 8
+        'btn': 8,
+        'input-field': 8
       },
       borderWidth: 1,
       boxShadow: {
         '3xl': '6px 10px 21px -6px rgba(0,0,0,0.75)',
         "4xl": "15px 18px 26px 0px rgba(0,0,0,0.75)"
       },
+      fontSize: {
+        'icon-md': 18,
+        'icon-big': 48,
+        'btn': 16,
+        'input-label': 14,
+        'input-field-msg': 14
+      },
+      fontWeight: {
+        'icon-md': 400,
+        'btn': 700,
+        'input-label': 400,
+        'input-field-msg': 400
+      },
+      padding: {
+        'icon-y': 7,
+        'icon-x': 8,
+        'btn-t': 14,
+        'btn-b': 10,
+        'btn-x': 24,
+        'input-t': 18,
+        'input-b': 8,
+        'input-l': 12,
+      }
     },
   },
   plugins: [],
