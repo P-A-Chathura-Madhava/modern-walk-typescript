@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CartDetails from "./ui-core/templates/pages/CartDetails";
 import ComponentsPage from "./ui-core/templates/pages/ComponentsPage";
+import LoginPage from "./ui-core/templates/pages/LoginPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/cart" element={<CartDetails />} />
           <Route path="/components" element={<ComponentsPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer
