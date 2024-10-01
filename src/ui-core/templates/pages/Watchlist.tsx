@@ -14,7 +14,7 @@ function Watchlist() {
   };
 
   return (
-    <div className="container mx-auto mt-2 px-60">
+    <div className="container mx-auto mt-2 px-60 font-poppins">
       <div className="flex justify-between">
         <h2 className="text-xl font-bold">Watch List</h2>
         {productState && (

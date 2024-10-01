@@ -1,9 +1,14 @@
-import React from 'react'
+// Shadcn UI components
+import { Button } from "../../../../components/ui/button";
 
-function PrimaryBtn() {
+function PrimaryBtn({ ...props }) {
+  const { title } = props;
+
   return (
-        <button className='text-white bg-primary-normal rounded-btn pt-btn-t pb-btn-b px-btn-x text-btn font-btn h-btn-normal w-btn-normal disabled:bg-primary-inverse-hover hover:bg-primary-hover selection:bg-primary-selected'>Add User</button>
-  )
+    <Button className="bg-custom-primary-custom-normal rounded-btn pt-btn-t pb-btn-b px-btn-x h-btn-normal w-btn-normal disabled:bg-custom-primary-custom-inverse-hover hover:bg-custom-primary-custom-inverse-hover selection:bg-custom-primary-custom-selected">
+      <span className="text-white font-btn text-btn">{title}</span>
+    </Button>
+  );
 }
 
-export default PrimaryBtn
+export default PrimaryBtn;

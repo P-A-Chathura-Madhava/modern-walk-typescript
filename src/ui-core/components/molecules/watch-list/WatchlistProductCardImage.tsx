@@ -20,7 +20,7 @@ function WatchlistProductCardImage({ ...props }) {
     dispatch(removeFromWatchlist(product));
   };
   return (
-    <div className="cardImageDiv">
+    <div className="cardImageDiv font-poppins">
       <div className="overflow-hidden">
         <CartProductCardHeading {...{ title }} />
       </div>

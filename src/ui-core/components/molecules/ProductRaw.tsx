@@ -5,7 +5,7 @@ function ProductRaw({ ...props }) {
   const { productState } = props;
 
   return (
-    <div className="flex justify-between align-middle">
+    <div className="flex justify-between align-middle font-poppins">
       {productState &&
         productState?.map((item: ProductProp, index: number) => {
           return (

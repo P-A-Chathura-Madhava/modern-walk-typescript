@@ -1,12 +1,27 @@
-import React from 'react'
-import { MdRadioButtonUnchecked } from "react-icons/md";
+// Shadcn UI components
+import { Label } from "../../../../components/ui/label";
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "../../../../components/ui/radio-group";
 
 function RadioBtn() {
   return (
-<div className='flex items-center justify-center cursor-pointer group hover:bg-primary-inverse-hover py-icon-y px-icon-x h-icon-h-normal w-icon-w-normal rounded-icon'>
-<input type="radio" className='w-4 h-4 bg-gray-100 border-gray-300 rounded accent-primary-normal group-hover:bg-primary-inverse-hover focus:ring-primary-normal focus:ring-2' />
-</div>
-  )
+    <RadioGroup defaultValue="option-one">
+      <div>
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-center cursor-pointer h-icon-h-normal w-icon-w-normal hover:bg-custom-primary-custom-inverse-hover rounded-icon">
+            <RadioGroupItem
+              value="option-one"
+              id="option-one"
+              className="text-custom-primary-custom-normal border-black/50"
+            />
+          </div>
+          <Label htmlFor="option-one">Option One</Label>
+        </div>
+      </div>
+    </RadioGroup>
+  );
 }
 
-export default RadioBtn
+export default RadioBtn;

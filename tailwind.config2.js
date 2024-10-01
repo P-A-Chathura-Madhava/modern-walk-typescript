@@ -1,4 +1,4 @@
-import { fontFamily } from "tailwindcss/defaultTheme";
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -49,32 +49,30 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-
-        // Custom color classes
-        'custom-primary': {
-          'custom-normal': '#EB8120',
-          'custom-hover': '#F17502',
-          'custom-selected': '#D16400',
-          'custom-inverse-hover': '#F7CDA6',
-          'custom-inverse-hover-click': '#EBB888'
+        'primary': {
+          'normal': '#EB8120',
+          'hover': '#F17502',
+          'selected': '#D16400',
+          'inverse-hover': '#F7CDA6',
+          'inverse-hover-click': '#EBB888'
         },
-        'custom-main': 'rgb(204, 209, 218)',
-        'custom-borderColor': {
-          'custom-active': '#7C89A1',
-          'custom-inactive': '#C6CBD5'
+        'main': 'rgb(204, 209, 218)',
+        'borderColor': {
+          'active': '#7C89A1',
+          'inactive': '#C6CBD5'
         },
-        'custom-background': {
+        'background': {
           'elephant-grey': '#F7F8F9',
           'elephant-contrast': '#F0F2F5',
           'white': '#FFFFFF'
         },
-        'custom-link': {
+        'link': {
           'blue': '#6A81FD',
           'hover': '#5467CE',
           'active': '#4054C1',
           'disabled': '#A5B0E3'
         },
-        'custom-danger': {
+        'danger': {
           'red': '#E1273D',
           'glow': '#ED9AA4',
           'inactive': '#F0939E',
@@ -82,9 +80,9 @@ module.exports = {
           'hover': '#C01227',
           'active': '#9D0215'
         },
-        'custom-normal': '#F7F8F9',
-        'custom-hover': '#F7F8F9',
-        'custom-selected': '#F7F8F9'
+        'normal': '#F7F8F9',
+        'hover': '#F7F8F9',
+        'selected': '#F7F8F9'
       },
       height: {
         'icon-h-normal': 32,
@@ -100,7 +98,32 @@ module.exports = {
         'table-sort': 18,
         'input-field': 416
       },
-
+      borderRadius: {
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
+        sm: "calc(var(--radius) - 4px)",
+        'icon': 9,
+        'btn': 8,
+        'input-field': 8
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+        poppins: ['Poppins', 'sans-serif']
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       borderWidth: 1,
       boxShadow: {
         '3xl': '6px 10px 21px -6px rgba(0,0,0,0.75)',
@@ -128,40 +151,9 @@ module.exports = {
         'input-t': 18,
         'input-b': 8,
         'input-l': 12,
-      },
-
-
-      borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
-        sm: "calc(var(--radius) - 4px)",
-
-        // Custom content
-        'icon': 9,
-        'btn': 8,
-        'input-field': 8
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-
-        // Custom Font
-        poppins: ['Poppins', 'sans-serif']
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
 }
+

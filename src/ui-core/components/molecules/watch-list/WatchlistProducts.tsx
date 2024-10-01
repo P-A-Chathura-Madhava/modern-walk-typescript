@@ -5,15 +5,15 @@ function WatchlistProducts({ ...props }) {
   const { productState } = props;
 
   if (productState.length === 0) {
-    return(
-      <div className="flex items-center justify-center h-40 text-2xl font-bold">
+    return (
+      <div className="flex items-center justify-center h-40 text-2xl font-bold font-poppins">
         <h2>Watchlist is Empty</h2>
       </div>
-    )
+    );
   }
 
   return (
-    <div className="grid grid-cols-4 gap-10 mt-4 gap-y-8">
+    <div className="grid grid-cols-4 gap-10 mt-4 gap-y-8 font-poppins">
       {productState &&
         productState?.map((item: ProductProp, index: number) => {
           return (

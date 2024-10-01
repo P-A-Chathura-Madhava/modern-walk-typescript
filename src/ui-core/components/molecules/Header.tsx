@@ -17,7 +17,7 @@ function Header() {
   );
 
   return (
-    <div className="flex justify-between px-4 border-b-4">
+    <div className="flex justify-between px-4 border-b-4 font-poppins">
       <Link to={"/"}>
         <CompanyLogo />
       </Link>
@@ -36,7 +36,7 @@ function Header() {
         {isSignedIn && (
           <div>
             <Link
-              className="flex items-center justify-center gap-1 p-2 transition-all duration-300 rounded-full hover:bg-slate-400"
+              className="flex items-center justify-center gap-1 p-2 transition-all duration-300 rounded-icon hover:bg-slate-200"
               to={"/watchlist"}
             >
               <IoBookmarksOutline className="text-xl" />({watchlistState.length}
@@ -46,7 +46,7 @@ function Header() {
         )}
         <div>
           <Link
-            className="flex items-center justify-center gap-1 p-2 transition-all duration-300 rounded-full hover:bg-slate-400"
+            className="flex items-center justify-center gap-1 p-2 transition-all duration-300 rounded-icon hover:bg-slate-200"
             to={"/cart"}
           >
             <FaShoppingCart className="text-xl" />({cartState})

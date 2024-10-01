@@ -1,12 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { ProductType } from "./types/ProductType";
-import { getMensProducts, getMixedProducts } from "../../services/productService";
+import {
+  getMensProducts,
+  getMixedProducts,
+} from "../../services/productService";
 
 const useGetMixedProducts = () => {
-    return useQuery<ProductType[]>({
-        queryKey: ["mixedProducts"],
-        queryFn: () => getMixedProducts()
-    })
-}
+  return useQuery<ProductType[]>({
+    queryKey: ["mixedProducts"],
+    queryFn: () => getMixedProducts(),
+  });
+};
 
 export default useGetMixedProducts;

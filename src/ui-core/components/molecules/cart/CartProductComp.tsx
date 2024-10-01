@@ -5,7 +5,7 @@ import ProductCardImageOnly from "../../atoms/cart/CartProductCardImage";
 function CartProductCardImage({ ...props }) {
   const { id, title, image, price, description, color } = props;
   return (
-    <div className="cardImageDiv">
+    <div className="cardImageDiv font-poppins">
       <div className="overflow-hidden">
         <ProductCardHeading {...{ title }} />
       </div>

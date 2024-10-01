@@ -1,12 +1,11 @@
-import React from 'react'
-import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
+import { Checkbox } from "../../../../components/ui/checkbox";
 
 function CheckBox() {
   return (
-<div className='flex items-center justify-center cursor-pointer group hover:bg-primary-inverse-hover py-icon-y px-icon-x h-icon-h-normal w-icon-w-normal rounded-icon'>
-<input type="checkbox" className='w-4 h-4 bg-gray-100 border-gray-300 rounded accent-primary-inverse-hover group-hover:bg-primary-inverse-hover focus:ring-primary-normal focus:ring-2 hover:accent-primary-inverse-hover' />
-</div>
-  )
+    <div className="flex items-center justify-center cursor-pointer h-icon-h-normal w-icon-w-normal hover:bg-custom-primary-custom-inverse-hover rounded-icon">
+      <Checkbox className="border-black/50" />
+    </div>
+  );
 }
 
-export default CheckBox
+export default CheckBox;
