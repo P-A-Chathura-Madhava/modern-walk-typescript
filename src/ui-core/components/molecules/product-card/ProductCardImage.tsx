@@ -1,0 +1,75 @@
+import { FaRegBookmark } from "react-icons/fa6";
+import { useAppDispatch } from "../../../../app/store";
+import { addToWatchlist } from "../../../../feature/watchlist/watchlistSlice";
+import { FaShoppingCart } from "react-icons/fa";
+import { addToCart } from "../../../../feature/cart/cartSlice";
+import { useUser } from "@clerk/clerk-react";
+import CartProductCardHeading from "../../atoms/cart/CartProductCardHeading";
+import CartProductCardImage from "../../atoms/cart/CartProductCardImage";
+import { useNavigate } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
+
+function ProductCardImage({ ...props }) {
+  const navigate = useNavigate();
+  const { isSignedIn } = useUser();
+  const { id, title, image, price, description, color } = props;
+
+  const product: any = {
+    id,
+    title,
+    image,
+    price,
+    description,
+    color,
+  };
+  const dispatch = useAppDispatch();
+
+  // Add to Watch list
+  const addToItemWatchlist = () => {
+    dispatch(addToWatchlist(product));
+  };
+
+  // Add to Cart
+  const addToCartHandler = () => {
+    product.qty = 1;
+    dispatch(addToCart(product));
+  };
+
+  return (
+    <div className="cardImageDiv font-poppins">
+      <div className="overflow-hidden">
+        <CartProductCardHeading {...{ title }} />
+      </div>
+      <div className="flex gap-2">
+        <CartProductCardImage {...{ image }} />
+        <div className="flex flex-col pt-6">
+          {isSignedIn && (
+            <div
+              className="flex items-center justify-center text-xl w-icon-w-normal h-icon-h-normal rounded-icon hover:bg-slate-200"
+              onClick={addToItemWatchlist}
+            >
+              <FaRegBookmark />
+            </div>
+          )}
+          {isSignedIn === false ? (
+            <div
+              className="flex items-center justify-center text-xl w-icon-w-normal h-icon-h-normal rounded-icon hover:bg-slate-200"
+              onClick={() => navigate("/signin")}
+            >
+              <FiShoppingCart />
+            </div>
+          ) : (
+            <div
+              className="flex items-center justify-center text-xl w-icon-w-normal h-icon-h-normal rounded-icon hover:bg-slate-200"
+              onClick={addToCartHandler}
+            >
+              <FaShoppingCart />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProductCardImage;
