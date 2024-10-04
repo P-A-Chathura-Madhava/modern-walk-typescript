@@ -1,14 +1,13 @@
 import InputField from "../../components/atoms/InputField/InputField";
 import CheckBox from "../../components/atoms/CheckBox/CheckBox";
 import PrimaryBtn from "../../components/atoms/Button/PrimaryBtn";
+import LoginPageLogo from "../../components/atoms/LoginPage/LoginPageLogo";
 
 function LoginPage() {
   return (
     <div className="container flex items-center justify-center pt-16 font-poppins">
       <div className="flex flex-col items-center">
-        <h1 className="pb-3 font-btn text-icon-big font-poppins">
-          Modern Walk
-        </h1>
+        <LoginPageLogo />
         <div className="flex flex-col gap-2">
           <InputField
             {...{

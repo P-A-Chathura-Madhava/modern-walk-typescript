@@ -5,7 +5,6 @@ import useGetMensProducts from "../../../hooks/products/useGetMensProducts";
 
 function MensProducts() {
   const products = useGetMensProducts();
-  // console.log(products.data);
   const productState = products.data;
 
   const { isSignedIn } = useUser();
